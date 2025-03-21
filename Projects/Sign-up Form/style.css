@@ -23,7 +23,7 @@ body {
 
 .left-panel {
   width: 40%;
-  background-image: url("unsplash-bg.avif");
+  background-image: url("assets/pictures/unsplash-bg.avif");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -153,4 +153,9 @@ button {
   margin-left: 48px;
   margin-bottom: 13.1rem;
   color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #596D48;
 }
