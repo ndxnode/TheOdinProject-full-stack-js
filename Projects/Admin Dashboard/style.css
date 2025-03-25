@@ -16,6 +16,7 @@ body {
   height: 100vh;
   /* min-height: 100%; */
 }
+
 .sidebar {
   display: grid;
   background-color: #408bdb;
@@ -49,15 +50,19 @@ body {
   margin-right: 10px;
 }
 
+.content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%
+}
 .main-icons {
   width: 20px;
   height: 20px;
 }
 .header {
-  grid-column: 2;
   grid-row: 1;
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: auto auto;
 }
 
 .user-settings {
@@ -118,10 +123,13 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
 .main-content {
-  grid-column: 2;
+  grid-row: 2;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  background-color: rgb(221, 221, 221);
+  padding: 20px 10px;
 }
 
 .projects {
