@@ -42,20 +42,82 @@ body {
   fill: white;
   margin-right: 10px;
 }
-
 .sidebar-icons {
   width: 20px;
   height: 20px;
   fill: white;
   margin-right: 10px;
 }
+
+.main-icons {
+  width: 20px;
+  height: 20px;
+}
 .header {
   grid-column: 2;
   grid-row: 1;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
 }
 
+.user-settings {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 30px;
+}
+.search-bar {
+  width: 100%;
+  margin-right: 20px;
+}
+.search-bar input {
+  width: 100%;
+  background-color: lightgray;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  padding: 0 15px;
+}
+.user-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-actions {
+  padding: 20px;
+  gap: 15px;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+}
+.actions ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+  gap: 20px;
+}
+.actions ul li {
+  border-radius: 20px;
+  height: 35px;
+  width: 100px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #408bdb;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 .main-content {
   grid-column: 2;
   display: grid;
