@@ -128,6 +128,8 @@ body {
   grid-row: 2;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
   background-color: rgb(221, 221, 221);
   padding: 20px 10px;
 }
@@ -140,7 +142,7 @@ body {
 }
 .cards {
   box-sizing: 100px 100px;
-  padding: 10px;
+  padding: 35px 20px;
   background-color: white;
   border-radius: 10px;
   border-left: 6px solid orange;
@@ -148,10 +150,34 @@ body {
 .cards p {
     margin-top: 10px;
     font-size: 0.8rem;
+    color: rgb(100, 97, 97);
 }
 .side-content {
   grid-column: 2;
   display: grid;
   grid-auto-flow: rows;
   grid-template-rows: 1fr 1fr;
+}
+.announcements {
+  margin: 10px;
+}
+.announcements h3 {
+  grid-row: 1;
+}
+.announcements h5 {
+  font-style: bold;
+}
+.announcement-card {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 20px;
+  display: grid;
+  overflow: scroll;
+}
+.announcement-card p {
+  width: max(15vw);
+}
+hr {
+  margin: 15px 0px;
 }
