@@ -136,10 +136,18 @@ body {
   grid-column: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 .cards {
   box-sizing: 100px 100px;
   padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 6px solid orange;
+}
+.cards p {
+    margin-top: 10px;
+    font-size: 0.8rem;
 }
 .side-content {
   grid-column: 2;
