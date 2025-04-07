@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
   const initialInfo = {
-    first_name: "Andy",
+    first_name: "",
     last_name: "",
     email: "",
     telephone: "",
