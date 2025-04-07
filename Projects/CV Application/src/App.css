@@ -1,19 +1,320 @@
+/* Global Styles */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #333;
+  --white: #fff;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --border-radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 15px;
 }
 
 .title {
-  text-align: left;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 1rem;
+  text-align: center;
+  margin: 20px 0 30px;
+  color: var(--secondary-color);
 }
 
+/* Container Layout */
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 100%;
+  height: calc(100vh - 100px); /* Adjusts for the title */
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.edit-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  overflow-y: auto;
+  padding-right: 10px; /* Add padding for scrollbar */
+}
+
+/* Section Styling */
+.section {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.section h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: var(--white);
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #2980b9;
+}
+
+.btn-edit {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  margin-top: 10px;
+}
+
+.btn-edit:hover {
+  background-color: #1a252f;
+}
+
+.btn-add {
+  background-color: #27ae60;
+  color: var(--white);
+  margin-right: 10px;
+}
+
+.btn-add:hover {
+  background-color: #219653;
+}
+
+.btn-remove {
+  background-color: var(--accent-color);
+  color: var(--white);
+  margin-top: 10px;
+}
+
+.btn-remove:hover {
+  background-color: #c0392b;
+}
+
+/* Job Entry Styling */
+.job-entry {
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.job-entry h3 {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.job-buttons {
+  display: flex;
+  margin-top: 15px;
+}
+
+/* Information Display Styling */
+.info-display {
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 15px;
+}
+
+.info-display p {
+  margin-bottom: 5px;
+}
+
+.job-display {
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.job-display h3 {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+/* CV Preview Styling */
+.cv-preview {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.cv-preview h2 {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.cv-section {
+  margin-bottom: 25px;
+}
+
+.cv-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cv-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cv-contact {
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+.cv-education,
+.cv-job {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.cv-school,
+.cv-position {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.cv-degree,
+.cv-company {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.cv-dates {
+  font-size: 14px;
+  color: var(--secondary-color);
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.cv-responsibilities {
+  font-size: 14px;
+  white-space: pre-line;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .edit-container,
+  .cv-preview {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .cv-preview {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+@media (max-height: 800px) {
+  .container {
+    height: auto;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  .section,
+  .cv-preview {
+    padding: 15px;
+  }
 }

@@ -65,7 +65,7 @@ export default function General({ generalInfo, updateGeneral }) {
           <div className="form-group">
             <label htmlFor="telephone">Phone Number:</label>
             <input 
-              type="tel" 
+              type="tel"
               id="telephone"
               name="telephone"
               value={formData.telephone}
