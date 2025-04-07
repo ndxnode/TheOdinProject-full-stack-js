@@ -39,6 +39,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -55,9 +58,8 @@ body {
   justify-content: center;
   margin: 0 auto;
   max-width: 100%;
-  height: calc(100vh - 100px); /* Adjusts for the title */
-  overflow-y: auto;
-  padding-bottom: 20px;
+  flex: 1;
+  min-height: 0; /* Important for flex child with scrollable content */
 }
 
 .edit-container {
@@ -65,7 +67,32 @@ body {
   min-width: 300px;
   max-width: 600px;
   overflow-y: auto;
-  padding-right: 10px; /* Add padding for scrollbar */
+  max-height: calc(100vh - 120px); /* Adjusts for the title and padding */
+  padding-right: 5px; /* Space for scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+}
+
+/* Scrollbar Styling */
+.edit-container::-webkit-scrollbar,
+.cv-preview::-webkit-scrollbar {
+  width: 8px;
+}
+
+.edit-container::-webkit-scrollbar-track,
+.cv-preview::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 10px;
+}
+
+.edit-container::-webkit-scrollbar-thumb,
+.cv-preview::-webkit-scrollbar-thumb {
+  background: var(--medium-gray);
+  border-radius: 10px;
+}
+
+.edit-container::-webkit-scrollbar-thumb:hover,
+.cv-preview::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
 }
 
 /* Section Styling */
@@ -214,9 +241,10 @@ button:hover {
   border-radius: var(--border-radius);
   padding: 30px;
   box-shadow: var(--shadow);
-  height: fit-content;
-  position: sticky;
-  top: 20px;
+  overflow-y: auto;
+  max-height: calc(100vh - 120px); /* Matches edit-container height */
+  padding-right: 15px; /* Accommodate scrollbar without shifting content */
+  scrollbar-width: thin; /* For Firefox */
 }
 
 .cv-preview h2 {
@@ -286,24 +314,22 @@ button:hover {
   .container {
     flex-direction: column;
     align-items: center;
-    height: auto;
   }
 
   .edit-container,
   .cv-preview {
     width: 100%;
     max-width: 600px;
-  }
-
-  .cv-preview {
-    position: static;
-    margin-top: 20px;
+    max-height: 500px; /* Fixed height on mobile for both sections */
+    margin-bottom: 20px;
   }
 }
 
-@media (max-height: 800px) {
-  .container {
-    height: auto;
+/* For smaller screens */
+@media (max-width: 600px) {
+  .edit-container,
+  .cv-preview {
+    max-height: 400px;
   }
 }
 
@@ -316,5 +342,10 @@ button:hover {
   .section,
   .cv-preview {
     padding: 15px;
+  }
+
+  .edit-container,
+  .cv-preview {
+    max-height: 350px;
   }
 }
